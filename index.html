@@ -247,12 +247,11 @@
     }
 
     .link-btn {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: center;
       width: 100%;
       padding: 17px 22px;
-      position: relative;
       background: rgba(80, 140, 210, 0.05);
       border: 1px solid rgba(80, 140, 210, 0.4);
       border-radius: 6px;
@@ -287,26 +286,28 @@
     }
 
     .link-btn .btn-label {
+      grid-column: 2;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .link-btn .btn-icon {
       width: 20px;
       height: 20px;
-      flex: 0 0 20px;
+      flex-shrink: 0;
+      display: block;
       opacity: 0.8;
       transition: opacity 0.2s ease;
     }
 
     .link-btn .btn-text {
-      text-align: left;
+      line-height: 1.2;
     }
 
     .link-btn .btn-arrow {
-      position: absolute;
-      right: 22px;
+      grid-column: 3;
+      justify-self: end;
       font-size: 1rem;
       opacity: 0.4;
       transition: opacity 0.2s ease, transform 0.2s ease;
