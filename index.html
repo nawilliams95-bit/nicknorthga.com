@@ -267,20 +267,8 @@
       -webkit-backdrop-filter: blur(8px);
       cursor: pointer;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       box-shadow: 0 0 10px rgba(80, 140, 210, 0.1), inset 0 1px 0 rgba(80, 140, 210, 0.12);
-    }
-
-    .link-btn::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #508cd2;
-      box-shadow: 0 0 8px #508cd2;
-      transition: opacity 0.18s ease;
     }
 
     .link-btn:hover,
@@ -292,53 +280,28 @@
       outline: none;
     }
 
-    .link-btn:hover::before,
-    .link-btn:focus-visible::before {
-      opacity: 1;
-    }
-
     .link-btn:active {
       box-shadow: 0 0 30px rgba(80, 140, 210, 0.6);
       background: rgba(80, 140, 210, 0.14);
     }
 
     .link-btn .btn-label {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
     }
 
     .link-btn .btn-icon {
-      display: block;
       width: 18px;
       height: 18px;
-      flex: 0 0 18px;
+      flex-shrink: 0;
       opacity: 0.8;
       transition: opacity 0.2s ease;
-    }
-
-    .link-btn .btn-text {
-      line-height: 1;
     }
 
     .link-btn:hover .btn-icon,
     .link-btn:focus-visible .btn-icon {
       opacity: 1;
-    }
-
-    .link-btn .btn-arrow {
-      position: absolute;
-      right: 20px;
-      font-size: 1rem;
-      opacity: 0.4;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .link-btn:hover .btn-arrow,
-    .link-btn:focus-visible .btn-arrow {
-      opacity: 1;
-      transform: translateX(3px);
     }
 
     /* Special CTA for listings */
