@@ -307,21 +307,19 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      white-space: nowrap;
     }
 
     .link-btn .btn-icon {
+      display: block;
       width: 18px;
       height: 18px;
-      flex-shrink: 0;
+      flex: 0 0 18px;
       opacity: 0.8;
       transition: opacity 0.2s ease;
-      display: inline-block;
-      vertical-align: middle;
     }
 
     .link-btn .btn-text {
-      text-align: center;
+      line-height: 1;
     }
 
     .link-btn:hover .btn-icon,
