@@ -7,7 +7,10 @@
   <meta name="description" content="Nick Williams, Real Estate Agent — Blue Ridge, GA | KW Elevate. Local knowledge. Straight answers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="Images/backgroundimage.jpg" />
+  <link rel="preload" as="image" href="Images/profile.jpg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -349,7 +352,7 @@
 
       <!-- Profile -->
       <div class="profile-wrap">
-        <img class="profile-img" src="Images/profile.jpg" alt="Nick Williams — Nick North GA" />
+        <img class="profile-img" src="Images/profile.jpg" alt="Nick Williams — Nick North GA" fetchpriority="high" decoding="async" />
       </div>
 
       <!-- Name -->
