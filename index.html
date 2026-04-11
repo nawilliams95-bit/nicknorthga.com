@@ -327,14 +327,10 @@
     .contact {
       width: 100%;
       display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 0;
+      gap: 5px;
       margin-bottom: 24px;
-      padding: 0 4px;
-      overflow: visible;
     }
 
     .contact-link {
@@ -342,22 +338,14 @@
       color: #ffffff;
       text-decoration: none;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      letter-spacing: 0.015em;
+      letter-spacing: 0.02em;
       text-shadow: 0 1px 6px rgba(0,0,0,0.95), 0 0 14px rgba(0,0,0,0.6);
       transition: color 0.18s ease;
-      padding: 0 6px;
     }
 
     .contact-link:hover { color: #7ab0e8; }
-
-    .contact-sep {
-      color: rgba(255,255,255,0.3);
-      font-size: 0.8rem;
-      flex-shrink: 0;
-      user-select: none;
-    }
 
     /* Footer */
     footer {
@@ -468,9 +456,7 @@
       <!-- Contact row -->
       <div class="contact">
         <a href="tel:+17069945670" class="contact-link">Cell: (706) 994-5670</a>
-        <span class="contact-sep">·</span>
         <a href="tel:+17066238186" class="contact-link">Office: (706) 623-8186</a>
-        <span class="contact-sep">·</span>
         <a href="mailto:nicholaswilliams@kw.com" class="contact-link">nicholaswilliams@kw.com</a>
       </div>
 
