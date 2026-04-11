@@ -249,7 +249,7 @@
     .link-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       width: 100%;
       padding: 17px 22px;
       background: rgba(80, 140, 210, 0.05);
@@ -286,22 +286,38 @@
     }
 
     .link-btn .btn-label {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .link-btn .btn-icon {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
       opacity: 0.8;
       transition: opacity 0.2s ease;
+    }
+
+    .link-btn .btn-text {
+      text-align: left;
+    }
+
+    .link-btn .btn-arrow {
+      font-size: 1rem;
+      opacity: 0.4;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .link-btn:hover .btn-icon,
     .link-btn:focus-visible .btn-icon {
       opacity: 1;
+    }
+
+    .link-btn:hover .btn-arrow,
+    .link-btn:focus-visible .btn-arrow {
+      opacity: 1;
+      transform: translateX(3px);
     }
 
     /* Special CTA for listings */
