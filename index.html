@@ -459,66 +459,161 @@
       margin-bottom: 16px;
     }
 
-    .signup-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    /* MailerLite overrides — .signup-block prefix beats MailerLite's injected styles */
+
+    /* Strip white card */
+    .signup-block .ml-form-embedContainer,
+    .signup-block .ml-form-embedWrapper,
+    .signup-block .ml-form-embedBody,
+    .signup-block .ml-form-successBody {
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
     }
 
-    .signup-input {
-      width: 100%;
-      padding: 14px 16px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(80, 140, 210, 0.35);
-      border-radius: 6px;
-      color: #e8ecf2;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      outline: none;
-      text-align: center;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    .signup-block .ml-form-embedWrapper {
+      border-radius: 0 !important;
     }
 
-    .signup-input::placeholder {
-      color: #6a7f96;
-      text-align: center;
+    /* Collapse internal padding/margin */
+    .signup-block .ml-form-embedBody,
+    .signup-block .ml-form-embedContent,
+    .signup-block .ml-form-horizontalRow,
+    .signup-block .ml-form-fieldRow {
+      padding: 0 !important;
+      margin: 0 0 10px 0 !important;
     }
 
-    .signup-input:focus {
-      border-color: #508cd2;
-      box-shadow: 0 0 14px rgba(80, 140, 210, 0.3);
+    /* Hide MailerLite's own title/description — we supply our own */
+    .signup-block .ml-form-embedContent h4,
+    .signup-block .ml-form-embedContent p {
+      display: none !important;
     }
 
-    .signup-btn {
-      width: 100%;
-      padding: 15px 22px;
-      background: rgba(80, 140, 210, 0.08);
-      border: 1px solid rgba(80, 140, 210, 0.4);
-      border-radius: 6px;
-      color: #ffffff;
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(0.82rem, 3vw, 0.9rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
-      box-shadow: 0 0 10px rgba(80, 140, 210, 0.1), inset 0 1px 0 rgba(80, 140, 210, 0.12);
+    /* Full-width containers */
+    .signup-block .ml-form-embedContainer,
+    .signup-block .ml-form-align-center,
+    .signup-block .ml-form-embedWrapper,
+    .signup-block .ml-form-embedBody,
+    .signup-block .ml-block-form,
+    .signup-block .ml-form-formContent,
+    .signup-block .ml-input-horizontal,
+    .signup-block .ml-field-group,
+    .signup-block .horizontal-fields {
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
-    .signup-btn:hover,
-    .signup-btn:focus-visible {
-      border-color: #508cd2;
-      box-shadow: 0 0 22px rgba(80, 140, 210, 0.45), inset 0 1px 0 rgba(80, 140, 210, 0.2);
-      background: rgba(80, 140, 210, 0.1);
-      color: #7ab0e8;
-      outline: none;
+    /* Stack horizontal layout vertically */
+    .signup-block .ml-form-horizontalRow {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
     }
 
-    .signup-btn:active {
-      box-shadow: 0 0 30px rgba(80, 140, 210, 0.6);
-      background: rgba(80, 140, 210, 0.14);
+    .signup-block .ml-button-horizontal,
+    .signup-block .ml-form-embedSubmit {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+
+    /* Email input */
+    .signup-block .ml-form-embedBody input.form-control {
+      width: 100% !important;
+      padding: 14px 16px !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(80, 140, 210, 0.35) !important;
+      border-radius: 6px !important;
+      color: #e8ecf2 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+      text-align: center !important;
+      outline: none !important;
+      box-shadow: none !important;
+      height: auto !important;
+      line-height: normal !important;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+    }
+
+    .signup-block .ml-form-embedBody input.form-control::placeholder {
+      color: #6a7f96 !important;
+    }
+
+    .signup-block .ml-form-embedBody input.form-control:focus {
+      border-color: #508cd2 !important;
+      box-shadow: 0 0 14px rgba(80, 140, 210, 0.3) !important;
+    }
+
+    .signup-block .ml-form-embedBody input.form-control.invalid {
+      border-color: rgba(220, 80, 80, 0.7) !important;
+    }
+
+    /* Submit button */
+    .signup-block .ml-button-horizontal button,
+    .signup-block .ml-form-embedSubmit button {
+      width: 100% !important;
+      padding: 15px 22px !important;
+      background: rgba(80, 140, 210, 0.08) !important;
+      border: 1px solid rgba(80, 140, 210, 0.4) !important;
+      border-radius: 6px !important;
+      color: #ffffff !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: clamp(0.82rem, 3vw, 0.9rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      cursor: pointer !important;
+      height: auto !important;
+      line-height: normal !important;
+      display: block !important;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease !important;
+      box-shadow: 0 0 10px rgba(80, 140, 210, 0.1), inset 0 1px 0 rgba(80, 140, 210, 0.12) !important;
+    }
+
+    .signup-block .ml-button-horizontal button:hover,
+    .signup-block .ml-form-embedSubmit button:hover {
+      border-color: #508cd2 !important;
+      box-shadow: 0 0 22px rgba(80, 140, 210, 0.45), inset 0 1px 0 rgba(80, 140, 210, 0.2) !important;
+      background: rgba(80, 140, 210, 0.1) !important;
+      color: #7ab0e8 !important;
+    }
+
+    .signup-block .ml-button-horizontal button:active,
+    .signup-block .ml-form-embedSubmit button:active {
+      box-shadow: 0 0 30px rgba(80, 140, 210, 0.6) !important;
+      background: rgba(80, 140, 210, 0.14) !important;
+    }
+
+    /* Hide all MailerLite loading indicators */
+    .signup-block .ml-form-spinner,
+    .signup-block .ml-form-embedSubmit .loading,
+    .signup-block .ml-form-loading {
+      display: none !important;
+    }
+
+    /* Success message */
+    .signup-block .ml-form-successContent {
+      padding: 12px 0 !important;
+      text-align: center !important;
+    }
+
+    .signup-block .ml-form-successContent h4 {
+      display: block !important;
+      font-family: 'DM Sans', sans-serif !important;
+      color: #ffffff !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 6px !important;
+    }
+
+    .signup-block .ml-form-successContent p {
+      display: block !important;
+      font-family: 'DM Sans', sans-serif !important;
+      color: #b0c4d8 !important;
+      font-size: 0.875rem !important;
+      line-height: 1.6 !important;
     }
 
     /* Responsive tweaks */
@@ -568,11 +663,7 @@
         <p class="section-label">The North Georgia Update</p>
         <div class="signup-block">
           <p class="signup-body">Want to stay up on what's going on in the North GA mountains? I send a short weekly update on the market, the area, and anything worth knowing.</p>
-          <!-- TODO: wire to MailerLite — account 2429891, form pmCjBC -->
-          <form class="signup-form" onsubmit="return false;">
-            <input class="signup-input" type="email" placeholder="Email" aria-label="Email address" />
-            <button class="signup-btn" type="button">Subscribe</button>
-          </form>
+          <div class="ml-embedded" data-form="pmCjBC"></div>
         </div>
 
         <p class="section-label">Social Media</p>
@@ -628,5 +719,99 @@
     </div>
   </footer>
 
+  <!-- MailerLite universal script — account 2429891 -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2429891');
+  </script>
+
+  <!-- Override MailerLite's ID-scoped styles once the form renders -->
+  <script>
+  (function () {
+    function inject(id) {
+      var prev = document.getElementById('nn-ml-css');
+      if (prev) prev.remove();
+      var s = document.createElement('style');
+      s.id = 'nn-ml-css';
+      s.textContent =
+        '#' + id + '.ml-form-embedWrapper,' +
+        '#' + id + ' .ml-form-embedBody,' +
+        '#' + id + ' .ml-form-successBody{' +
+          'background:transparent!important;box-shadow:none!important;' +
+          'border:none!important;border-radius:0!important}' +
+        '#' + id + ' .ml-form-embedBody,' +
+        '#' + id + ' .ml-form-embedContent,' +
+        '#' + id + ' .ml-form-horizontalRow,' +
+        '#' + id + ' .ml-form-fieldRow{padding:0!important;margin:0 0 10px!important}' +
+        '#' + id + ' .ml-form-embedContent h4,' +
+        '#' + id + ' .ml-form-embedContent p{display:none!important}' +
+        '#' + id + ' .ml-form-embedContainer,' +
+        '#' + id + ' .ml-form-align-center,' +
+        '#' + id + ' .ml-block-form,' +
+        '#' + id + ' .ml-form-formContent,' +
+        '#' + id + ' .ml-input-horizontal,' +
+        '#' + id + ' .ml-field-group,' +
+        '#' + id + ' .horizontal-fields{width:100%!important;max-width:100%!important}' +
+        '#' + id + ' .ml-form-horizontalRow{display:flex!important;flex-direction:column!important;gap:10px!important}' +
+        '#' + id + ' .ml-button-horizontal,' +
+        '#' + id + ' .ml-form-embedSubmit{padding:0!important;margin:0!important;width:100%!important}' +
+        '#' + id + ' input.form-control{' +
+          'width:100%!important;padding:14px 16px!important;' +
+          'background:rgba(255,255,255,.06)!important;' +
+          'border:1px solid rgba(80,140,210,.35)!important;' +
+          'border-radius:6px!important;color:#e8ecf2!important;' +
+          'font-family:"DM Sans",sans-serif!important;font-size:.9rem!important;' +
+          'text-align:center!important;outline:none!important;' +
+          'box-shadow:none!important;height:auto!important;line-height:normal!important}' +
+        '#' + id + ' input.form-control:focus{' +
+          'border-color:#508cd2!important;' +
+          'box-shadow:0 0 14px rgba(80,140,210,.3)!important}' +
+        '#' + id + ' input.form-control.invalid{border-color:rgba(220,80,80,.7)!important}' +
+        '#' + id + ' .ml-form-embedSubmit button,' +
+        '#' + id + ' .ml-button-horizontal button{' +
+          'width:100%!important;padding:15px 22px!important;' +
+          'background:rgba(80,140,210,.08)!important;' +
+          'border:1px solid rgba(80,140,210,.4)!important;' +
+          'border-radius:6px!important;color:#fff!important;' +
+          'font-family:"DM Sans",sans-serif!important;font-size:.9rem!important;' +
+          'font-weight:700!important;letter-spacing:.08em!important;' +
+          'text-transform:uppercase!important;cursor:pointer!important;' +
+          'height:auto!important;line-height:normal!important;display:block!important;' +
+          'box-shadow:0 0 10px rgba(80,140,210,.1),inset 0 1px 0 rgba(80,140,210,.12)!important;' +
+          'transition:border-color .18s,box-shadow .18s,background .18s,color .18s!important}' +
+        '#' + id + ' .ml-form-embedSubmit button:hover,' +
+        '#' + id + ' .ml-button-horizontal button:hover{' +
+          'border-color:#508cd2!important;' +
+          'box-shadow:0 0 22px rgba(80,140,210,.45),inset 0 1px 0 rgba(80,140,210,.2)!important;' +
+          'background:rgba(80,140,210,.1)!important;color:#7ab0e8!important}' +
+        '#' + id + ' .ml-form-spinner,' +
+        '#' + id + ' .ml-form-embedSubmit .loading,' +
+        '#' + id + ' .ml-form-loading{display:none!important}' +
+        '#' + id + ' .ml-form-successContent{padding:12px 0!important;text-align:center!important}' +
+        '#' + id + ' .ml-form-successContent h4{' +
+          'display:block!important;font-family:"DM Sans",sans-serif!important;' +
+          'color:#fff!important;font-size:1rem!important;font-weight:700!important;margin-bottom:6px!important}' +
+        '#' + id + ' .ml-form-successContent p{' +
+          'display:block!important;font-family:"DM Sans",sans-serif!important;' +
+          'color:#b0c4d8!important;font-size:.875rem!important;line-height:1.6!important}';
+      document.head.appendChild(s);
+    }
+
+    function check() {
+      var el = document.querySelector('.signup-block [id^="mlb2-"]');
+      if (el) { inject(el.id); return true; }
+      return false;
+    }
+
+    if (!check()) {
+      var mo = new MutationObserver(function () { if (check()) mo.disconnect(); });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    }
+    window.addEventListener('load', check);
+  })();
+  </script>
 </body>
 </html>
