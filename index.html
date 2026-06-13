@@ -436,6 +436,91 @@
       text-shadow: 0 1px 8px rgba(0,0,0,0.9);
     }
 
+    /* Email signup block */
+    .signup-block {
+      width: 100%;
+      background: rgba(80, 140, 210, 0.05);
+      border: 1px solid rgba(80, 140, 210, 0.3);
+      border-radius: 6px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .signup-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.82rem, 3vw, 0.9rem);
+      font-weight: 400;
+      color: #b0c4d8;
+      line-height: 1.6;
+      text-align: center;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+      margin-bottom: 16px;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .signup-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(80, 140, 210, 0.35);
+      border-radius: 6px;
+      color: #e8ecf2;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .signup-input::placeholder {
+      color: #6a7f96;
+      text-align: center;
+    }
+
+    .signup-input:focus {
+      border-color: #508cd2;
+      box-shadow: 0 0 14px rgba(80, 140, 210, 0.3);
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 15px 22px;
+      background: rgba(80, 140, 210, 0.08);
+      border: 1px solid rgba(80, 140, 210, 0.4);
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.82rem, 3vw, 0.9rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+      box-shadow: 0 0 10px rgba(80, 140, 210, 0.1), inset 0 1px 0 rgba(80, 140, 210, 0.12);
+    }
+
+    .signup-btn:hover,
+    .signup-btn:focus-visible {
+      border-color: #508cd2;
+      box-shadow: 0 0 22px rgba(80, 140, 210, 0.45), inset 0 1px 0 rgba(80, 140, 210, 0.2);
+      background: rgba(80, 140, 210, 0.1);
+      color: #7ab0e8;
+      outline: none;
+    }
+
+    .signup-btn:active {
+      box-shadow: 0 0 30px rgba(80, 140, 210, 0.6);
+      background: rgba(80, 140, 210, 0.14);
+    }
+
     /* Responsive tweaks */
     @media (max-width: 360px) {
       main {
@@ -461,7 +546,7 @@
       <p class="license">License #447455</p>
 
       <!-- Subtitle -->
-      <p class="subtitle">Real Estate Agent &mdash; Blue Ridge, GA&nbsp;&nbsp;|&nbsp;&nbsp;KW Elevate</p>
+      <p class="subtitle">Real Estate Agent &mdash; North Georgia&nbsp;&nbsp;|&nbsp;&nbsp;KW Elevate</p>
       <p class="compliance">Each office is independently owned and operated.</p>
 
       <div class="divider"></div>
@@ -479,19 +564,16 @@
       <!-- Links -->
       <nav class="links" aria-label="Social links">
 
-        <p class="section-label">Website</p>
-
-        <a class="link-btn cta" href="https://nicknorthga.kw.com" target="_blank" rel="noopener noreferrer">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="#508cd2" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          <span class="btn-text">Search Listings</span>
-          <span class="btn-arrow">&#8594;</span>
-        </a>
-
-        <a class="link-btn" href="https://share.google/vOynJxAFs9PPurlTr" target="_blank" rel="noopener noreferrer">
-          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-          <span class="btn-text">Google Reviews</span>
-          <span class="btn-arrow">&#8594;</span>
-        </a>
+        <!-- The North Georgia Update — email signup -->
+        <p class="section-label">The North Georgia Update</p>
+        <div class="signup-block">
+          <p class="signup-body">Want to stay up on what's going on in the North GA mountains? I send a short weekly update on the market, the area, and anything worth knowing.</p>
+          <!-- TODO: wire to MailerLite — account 2429891, form pmCjBC -->
+          <form class="signup-form" onsubmit="return false;">
+            <input class="signup-input" type="email" placeholder="Email" aria-label="Email address" />
+            <button class="signup-btn" type="button">Subscribe</button>
+          </form>
+        </div>
 
         <p class="section-label">Social Media</p>
 
